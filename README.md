@@ -81,6 +81,15 @@ find pdf2png/ -type f -exec chmod 755 {} \;
 ## Create a virtual environment
 Working from name
 
+```
+cd /home/name/pdf2png
+python3 -m venv myenv
+source myenv/bin/activate
+pip install fastapi uvicorn pdf2image pillow python-multipart
+pip list
+uvicorn app:app --reload --host 0.0.0.0 --port 7654 -- Do not run this command! This is for manual testing only.
+```
+
 Versions of added packages:
 ```
 annotated-types   0.7.0
@@ -100,15 +109,6 @@ starlette         0.46.2
 typing_extensions 4.14.0
 typing-inspection 0.4.1
 uvicorn           0.35.0
-```
-
-```
-cd /home/name/pdf2png
-python3 -m venv myenv
-source myenv/bin/activate
-pip install fastapi uvicorn pdf2image pillow python-multipart
-pip list
-uvicorn app:app --reload --host 0.0.0.0 --port 7654 -- Do not run this command! This is for manual testing only.
 ```
 
 ## Adding services to systemD
